@@ -36,16 +36,13 @@ namespace DeadLine_Programm
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            ValueClass.Name = textBoxNameDL.Text;
+            ValueClass.Purpose = textBoxPurposeDL.Text;
             ValueClass.Date = textBoxDate.Text;
             ValueClass.Hours = comboBoxHours.Text;
             ValueClass.Minutes = comboBoxMinutes.Text;
             Close();
-
-            //SerializeDeserialize.SerializeObject(frm.Hours, "Hours.xml");
-            //SerializeDeserialize.SerializeObject(frm.Minutes, "Minutes.xml");
-            //SerializeDeserialize.SerializeObject(frm.Dates, "Dates.xml");
-            //SerializeDeserialize.SerializeObject(frm.Names, "Names.xml");
-            //SerializeDeserialize.SerializeObject(frm.DeadlineNames, "DeadlineNames.xml");
+            /////////////////////////////////////
         }
     }
 }

@@ -32,43 +32,88 @@ namespace DeadLine_Programm
             this.buttonAddEvent = new System.Windows.Forms.Button();
             this.buttonCloseProgramm = new System.Windows.Forms.Button();
             this.buttonDay = new System.Windows.Forms.Button();
+            this.listBoxShowDeadline = new System.Windows.Forms.ListBox();
+            this.buttonTomorrow = new System.Windows.Forms.Button();
+            this.buttonWeek = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAddEvent
             // 
-            this.buttonAddEvent.Location = new System.Drawing.Point(26, 235);
+            this.buttonAddEvent.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonAddEvent.Location = new System.Drawing.Point(63, 529);
             this.buttonAddEvent.Name = "buttonAddEvent";
-            this.buttonAddEvent.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddEvent.Size = new System.Drawing.Size(133, 23);
             this.buttonAddEvent.TabIndex = 0;
-            this.buttonAddEvent.Text = "button1";
-            this.buttonAddEvent.UseVisualStyleBackColor = true;
+            this.buttonAddEvent.Text = "добавить Дедлайн";
+            this.buttonAddEvent.UseVisualStyleBackColor = false;
             this.buttonAddEvent.Click += new System.EventHandler(this.buttonAddEvent_Click);
             // 
             // buttonCloseProgramm
             // 
-            this.buttonCloseProgramm.Location = new System.Drawing.Point(395, 328);
+            this.buttonCloseProgramm.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonCloseProgramm.Location = new System.Drawing.Point(815, 529);
             this.buttonCloseProgramm.Name = "buttonCloseProgramm";
-            this.buttonCloseProgramm.Size = new System.Drawing.Size(75, 23);
+            this.buttonCloseProgramm.Size = new System.Drawing.Size(121, 23);
             this.buttonCloseProgramm.TabIndex = 1;
-            this.buttonCloseProgramm.Text = "button1";
-            this.buttonCloseProgramm.UseVisualStyleBackColor = true;
+            this.buttonCloseProgramm.Text = "закрыть программу";
+            this.buttonCloseProgramm.UseVisualStyleBackColor = false;
             this.buttonCloseProgramm.Click += new System.EventHandler(this.buttonCloseProgramm_Click);
             // 
             // buttonDay
             // 
-            this.buttonDay.Location = new System.Drawing.Point(649, 274);
+            this.buttonDay.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonDay.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDay.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.buttonDay.Location = new System.Drawing.Point(978, 0);
             this.buttonDay.Name = "buttonDay";
-            this.buttonDay.Size = new System.Drawing.Size(75, 23);
+            this.buttonDay.Size = new System.Drawing.Size(114, 72);
             this.buttonDay.TabIndex = 2;
-            this.buttonDay.Text = "button1";
-            this.buttonDay.UseVisualStyleBackColor = true;
+            this.buttonDay.Text = "Список дедлайнов на сегодняшний день";
+            this.buttonDay.UseVisualStyleBackColor = false;
             this.buttonDay.Click += new System.EventHandler(this.buttonDay_Click);
+            // 
+            // listBoxShowDeadline
+            // 
+            this.listBoxShowDeadline.BackColor = System.Drawing.SystemColors.Info;
+            this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listBoxShowDeadline.FormattingEnabled = true;
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(1117, 0);
+            this.listBoxShowDeadline.Name = "listBoxShowDeadline";
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(320, 699);
+            this.listBoxShowDeadline.TabIndex = 3;
+            // 
+            // buttonTomorrow
+            // 
+            this.buttonTomorrow.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonTomorrow.Location = new System.Drawing.Point(978, 96);
+            this.buttonTomorrow.Name = "buttonTomorrow";
+            this.buttonTomorrow.Size = new System.Drawing.Size(114, 73);
+            this.buttonTomorrow.TabIndex = 4;
+            this.buttonTomorrow.Text = "Список дедлайнов на завтрашний день";
+            this.buttonTomorrow.UseVisualStyleBackColor = false;
+            this.buttonTomorrow.Click += new System.EventHandler(this.buttonTomorrow_Click);
+            // 
+            // buttonWeek
+            // 
+            this.buttonWeek.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonWeek.Location = new System.Drawing.Point(978, 195);
+            this.buttonWeek.Name = "buttonWeek";
+            this.buttonWeek.Size = new System.Drawing.Size(114, 70);
+            this.buttonWeek.TabIndex = 5;
+            this.buttonWeek.Text = "Список дедлайнов в течении следующей недели";
+            this.buttonWeek.UseVisualStyleBackColor = false;
+            this.buttonWeek.Click += new System.EventHandler(this.buttonWeek_Click);
             // 
             // FormDeadLines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClientSize = new System.Drawing.Size(1437, 699);
+            this.Controls.Add(this.buttonWeek);
+            this.Controls.Add(this.buttonTomorrow);
+            this.Controls.Add(this.listBoxShowDeadline);
             this.Controls.Add(this.buttonDay);
             this.Controls.Add(this.buttonCloseProgramm);
             this.Controls.Add(this.buttonAddEvent);
@@ -84,6 +129,9 @@ namespace DeadLine_Programm
         private System.Windows.Forms.Button buttonAddEvent;
         private System.Windows.Forms.Button buttonCloseProgramm;
         private System.Windows.Forms.Button buttonDay;
+        private System.Windows.Forms.ListBox listBoxShowDeadline;
+        private System.Windows.Forms.Button buttonTomorrow;
+        private System.Windows.Forms.Button buttonWeek;
     }
 }
 

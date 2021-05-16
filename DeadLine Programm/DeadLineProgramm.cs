@@ -98,13 +98,42 @@ namespace DeadLine_Programm
             SerializeAndDeserialize.SerializeObject(ListClass.Names, "Names.xml");
             SerializeAndDeserialize.SerializeObject(ListClass.Purpose, "DeadlineNames.xml");
             Application.Exit();//Закрытие приложения
+
+           
         }
 
-        private FormOneDay fOD;
         private void buttonDay_Click(object sender, EventArgs e)
         {
-            fOD = new FormOneDay();
-            fOD.Show();
+            foreach (string el in ListClass.Names)
+            {
+                if (a = b)
+                {
+                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС
+                }
+            }
+        }
+
+        private void buttonTomorrow_Click(object sender, EventArgs e)
+        {
+            foreach (string el in ListClass.Names)
+            {
+                if (a = b)
+                {
+                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС
+                }
+            }
+        }
+
+        private void buttonWeek_Click(object sender, EventArgs e)
+        {
+            foreach (string el in ListClass.Names)
+            {
+                if (a = b)
+                {
+                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС 
+                    MessageBox.Show(a);
+                }
+            }
         }
     }
 }
