@@ -35,6 +35,10 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline = new System.Windows.Forms.ListBox();
             this.buttonTomorrow = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAddEvent
@@ -105,12 +109,49 @@ namespace DeadLine_Programm
             this.buttonWeek.UseVisualStyleBackColor = false;
             this.buttonWeek.Click += new System.EventHandler(this.buttonWeek_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(38, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(239, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(38, 108);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(109, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(192, 108);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(85, 20);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(970, 299);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "выгрузить из файла";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormDeadLines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1437, 699);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonWeek);
             this.Controls.Add(this.buttonTomorrow);
             this.Controls.Add(this.listBoxShowDeadline);
@@ -121,6 +162,7 @@ namespace DeadLine_Programm
             this.Text = "DeadLines";
             this.Load += new System.EventHandler(this.DeadLines_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -132,6 +174,10 @@ namespace DeadLine_Programm
         private System.Windows.Forms.ListBox listBoxShowDeadline;
         private System.Windows.Forms.Button buttonTomorrow;
         private System.Windows.Forms.Button buttonWeek;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

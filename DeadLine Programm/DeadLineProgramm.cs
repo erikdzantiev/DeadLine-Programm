@@ -53,87 +53,34 @@ namespace DeadLine_Programm
         {
             fam = new FormAddEvent();
             fam.ShowDialog();
-
-            try
-            {
-                //Проверка на ввод
-                if (fam.textBoxNameDL.Text != "" && fam.textBoxDate.Text != "" && fam.comboBoxHours.Text != "" && fam.comboBoxMinutes.Text != "")
-                {
-                    ListClass.Names.Add(ValueClass.Name);// Добавление названия Дедлайна
-                    ListClass.Dates.Add(ValueClass.Date);//Добавление даты в список Дат
-                    ListClass.Hours.Add(ValueClass.Hours);//Добавление часов в список Часов
-                    ListClass.Minutes.Add(ValueClass.Minutes);//Добавление минут в список Минут
-                }
-            }
-            //catch при вводе неправильной даты
-            catch
-            {
-                MessageBox.Show("Введите дату правильно!");
-                fam.Close();
-            }
         }
 
         private void buttonCloseProgramm_Click(object sender, EventArgs e)
         {
-            //Очистка файлов перед сериализацией 
-            StreamWriter Writer1 = new StreamWriter("Hours.xml", false, Encoding.UTF8);
-            Writer1.WriteLine("");
-            Writer1.Close();
-            StreamWriter Writer2 = new StreamWriter("Minutes.xml", false, Encoding.UTF8);
-            Writer2.WriteLine("");
-            Writer2.Close();
-            StreamWriter Writer3 = new StreamWriter("Dates.xml", false, Encoding.UTF8);
-            Writer3.WriteLine("");
-            Writer3.Close();
-            StreamWriter Writer4 = new StreamWriter("Names.xml", false, Encoding.UTF8);
-            Writer4.WriteLine("");
-            Writer4.Close();
-            StreamWriter Writer5 = new StreamWriter("DeadlineNames.xml", false, Encoding.UTF8);
-            Writer5.WriteLine("");
-            Writer5.Close();
-            //Сериализация
-            SerializeAndDeserialize.SerializeObject(ListClass.Hours, "Hours.xml");
-            SerializeAndDeserialize.SerializeObject(ListClass.Minutes, "Minutes.xml");
-            SerializeAndDeserialize.SerializeObject(ListClass.Dates, "Dates.xml");
-            SerializeAndDeserialize.SerializeObject(ListClass.Names, "Names.xml");
-            SerializeAndDeserialize.SerializeObject(ListClass.Purpose, "DeadlineNames.xml");
-            Application.Exit();//Закрытие приложения
+
 
            
         }
 
         private void buttonDay_Click(object sender, EventArgs e)
         {
-            foreach (string el in ListClass.Names)
-            {
-                if (a = b)
-                {
-                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС
-                }
-            }
+           
         }
 
         private void buttonTomorrow_Click(object sender, EventArgs e)
         {
-            foreach (string el in ListClass.Names)
-            {
-                if (a = b)
-                {
-                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС
-                }
-            }
+
         }
 
         private void buttonWeek_Click(object sender, EventArgs e)
+        { 
+          //FormAddEvent.lst 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            foreach (string el in ListClass.Names)
-            {
-                if (a = b)
-                {
-                    listBoxShowDeadline.Items.Add(el); //////////////////////////////////////////////////////////////////////////////////////////////////////  ЗАПИСЬ В ЛИСТБОКС 
-                    MessageBox.Show(a);
-                }
-            }
+            FormAddEvent.lst.LoadFromFile();
+            FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
         }
     }
 }
