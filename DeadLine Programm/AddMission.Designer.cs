@@ -36,7 +36,6 @@ namespace DeadLine_Programm
             this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBoxMeets = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -100,21 +99,12 @@ namespace DeadLine_Programm
             this.label2.TabIndex = 12;
             this.label2.Text = "Описание Дедлайна";
             // 
-            // listBoxMeets
-            // 
-            this.listBoxMeets.FormattingEnabled = true;
-            this.listBoxMeets.Location = new System.Drawing.Point(539, 41);
-            this.listBoxMeets.Name = "listBoxMeets";
-            this.listBoxMeets.Size = new System.Drawing.Size(164, 316);
-            this.listBoxMeets.TabIndex = 13;
-            // 
             // FormAddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBoxMeets);
+            this.ClientSize = new System.Drawing.Size(339, 403);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTime);
@@ -138,6 +128,5 @@ namespace DeadLine_Programm
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBoxMeets;
     }
 }

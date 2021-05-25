@@ -35,16 +35,13 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline = new System.Windows.Forms.ListBox();
             this.buttonTomorrow = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoadFromFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAddEvent
             // 
             this.buttonAddEvent.BackColor = System.Drawing.SystemColors.Info;
-            this.buttonAddEvent.Location = new System.Drawing.Point(63, 529);
+            this.buttonAddEvent.Location = new System.Drawing.Point(52, 349);
             this.buttonAddEvent.Name = "buttonAddEvent";
             this.buttonAddEvent.Size = new System.Drawing.Size(133, 23);
             this.buttonAddEvent.TabIndex = 0;
@@ -55,7 +52,7 @@ namespace DeadLine_Programm
             // buttonCloseProgramm
             // 
             this.buttonCloseProgramm.BackColor = System.Drawing.SystemColors.Info;
-            this.buttonCloseProgramm.Location = new System.Drawing.Point(815, 529);
+            this.buttonCloseProgramm.Location = new System.Drawing.Point(244, 349);
             this.buttonCloseProgramm.Name = "buttonCloseProgramm";
             this.buttonCloseProgramm.Size = new System.Drawing.Size(121, 23);
             this.buttonCloseProgramm.TabIndex = 1;
@@ -68,7 +65,7 @@ namespace DeadLine_Programm
             this.buttonDay.BackColor = System.Drawing.Color.DarkOrange;
             this.buttonDay.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDay.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonDay.Location = new System.Drawing.Point(978, 0);
+            this.buttonDay.Location = new System.Drawing.Point(432, 0);
             this.buttonDay.Name = "buttonDay";
             this.buttonDay.Size = new System.Drawing.Size(114, 72);
             this.buttonDay.TabIndex = 2;
@@ -82,15 +79,15 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxShowDeadline.FormattingEnabled = true;
-            this.listBoxShowDeadline.Location = new System.Drawing.Point(1117, 0);
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(553, 0);
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
-            this.listBoxShowDeadline.Size = new System.Drawing.Size(320, 699);
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(320, 473);
             this.listBoxShowDeadline.TabIndex = 3;
             // 
             // buttonTomorrow
             // 
             this.buttonTomorrow.BackColor = System.Drawing.Color.DarkOrange;
-            this.buttonTomorrow.Location = new System.Drawing.Point(978, 96);
+            this.buttonTomorrow.Location = new System.Drawing.Point(432, 78);
             this.buttonTomorrow.Name = "buttonTomorrow";
             this.buttonTomorrow.Size = new System.Drawing.Size(114, 73);
             this.buttonTomorrow.TabIndex = 4;
@@ -101,7 +98,7 @@ namespace DeadLine_Programm
             // buttonWeek
             // 
             this.buttonWeek.BackColor = System.Drawing.Color.DarkOrange;
-            this.buttonWeek.Location = new System.Drawing.Point(978, 195);
+            this.buttonWeek.Location = new System.Drawing.Point(432, 157);
             this.buttonWeek.Name = "buttonWeek";
             this.buttonWeek.Size = new System.Drawing.Size(114, 70);
             this.buttonWeek.TabIndex = 5;
@@ -109,49 +106,24 @@ namespace DeadLine_Programm
             this.buttonWeek.UseVisualStyleBackColor = false;
             this.buttonWeek.Click += new System.EventHandler(this.buttonWeek_Click);
             // 
-            // textBox1
+            // buttonLoadFromFile
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(38, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(192, 108);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(85, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(970, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "выгрузить из файла";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLoadFromFile.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.buttonLoadFromFile.Location = new System.Drawing.Point(432, 233);
+            this.buttonLoadFromFile.Name = "buttonLoadFromFile";
+            this.buttonLoadFromFile.Size = new System.Drawing.Size(114, 60);
+            this.buttonLoadFromFile.TabIndex = 9;
+            this.buttonLoadFromFile.Text = "выгрузить из файла";
+            this.buttonLoadFromFile.UseVisualStyleBackColor = false;
+            this.buttonLoadFromFile.Click += new System.EventHandler(this.buttonLoadFromFile_Click);
             // 
             // FormDeadLines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1437, 699);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(873, 473);
+            this.Controls.Add(this.buttonLoadFromFile);
             this.Controls.Add(this.buttonWeek);
             this.Controls.Add(this.buttonTomorrow);
             this.Controls.Add(this.listBoxShowDeadline);
@@ -162,7 +134,6 @@ namespace DeadLine_Programm
             this.Text = "DeadLines";
             this.Load += new System.EventHandler(this.DeadLines_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -174,10 +145,7 @@ namespace DeadLine_Programm
         private System.Windows.Forms.ListBox listBoxShowDeadline;
         private System.Windows.Forms.Button buttonTomorrow;
         private System.Windows.Forms.Button buttonWeek;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLoadFromFile;
     }
 }
 
