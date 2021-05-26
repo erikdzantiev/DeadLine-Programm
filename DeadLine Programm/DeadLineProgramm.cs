@@ -43,28 +43,31 @@ namespace DeadLine_Programm
 
         private void buttonDay_Click(object sender, EventArgs e)
         {
-           
+            listBoxShowDeadline.Items.Clear();
+            FormAddEvent.lst.Today(listBoxShowDeadline);
         }
 
         private void buttonTomorrow_Click(object sender, EventArgs e)
         {
-           
+            listBoxShowDeadline.Items.Clear();
+            FormAddEvent.lst.Tomorrow(listBoxShowDeadline);
         }
 
         private void buttonWeek_Click(object sender, EventArgs e)
         {
-            //FormAddEvent.lst.LoadFromFile();
-            //    if ()
-
-            //        int index = listBoxMeets.SelectedIndex;
-            //string[] s = listBoxMeets.Items[index].ToString().Split();
-            //DateTime dt = DateTime.Parse(s[0] + " " + s[1]);
-            //labelDeltaTime.Text = (dt - DateTime.Today).Days.ToString() + " дней";
+            listBoxShowDeadline.Items.Clear();
+            FormAddEvent.lst.Week(listBoxShowDeadline);
         }
 
-        private void buttonLoadFromFile_Click(object sender, EventArgs e)
+        private void buttonOtherTime_Click(object sender, EventArgs e)
         {
-            FormAddEvent.lst.LoadFromFile();
+            listBoxShowDeadline.Items.Clear();
+            FormAddEvent.lst.OtherTime(listBoxShowDeadline);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBoxShowDeadline.Items.Clear();
             FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
         }
     }

@@ -22,13 +22,85 @@ namespace DeadLine_Programm
 
         public override string ToString()
         {
-            return Time + " " + Name;
+            return Name + " " + Time;
         }
     }
 
     public class ListDL
     {
         List<DLSaveFile> listDL = new List<DLSaveFile>();
+
+        public void Tomorrow(ListBox l)
+        {
+            using (StreamReader sr = new StreamReader("listDL.json"))
+            {
+                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+            }
+
+            int n = 0;
+            foreach (var el in listDL)
+            {
+                if ((el.Time - DateTime.Today).Days == 1)
+                {
+                    n++;
+                    l.Items.Add(n + ") " + el);
+                }
+            }
+        }
+
+        public void Today(ListBox l)
+        {
+            using (StreamReader sr = new StreamReader("listDL.json"))
+            {
+                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+            }
+            int n = 0;
+            foreach (var el in listDL)
+            {
+                if ((el.Time - DateTime.Today).Days < 1)
+                {
+                    n++;
+                    l.Items.Add(n + ") " + el);
+                }
+            }
+        }
+
+        public void Week(ListBox l)
+        {
+            using (StreamReader sr = new StreamReader("listDL.json"))
+            {
+                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+            }
+
+            int n = 0;
+            foreach (var el in listDL)
+            {
+                if ((el.Time - DateTime.Today).Days <= 7 && (el.Time - DateTime.Today).Days > 1)
+                {
+                    n++;
+                    l.Items.Add(n + ") " + el);
+                }
+            }
+        }
+
+
+        public void OtherTime(ListBox l)
+        {
+            using (StreamReader sr = new StreamReader("listDL.json"))
+            {
+                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+            }
+
+            int n = 0;
+            foreach (var el in listDL)
+            {
+                if ((el.Time - DateTime.Today).Days > 7)
+                {
+                    n++;
+                    l.Items.Add(n + ") " + el);
+                }
+            }
+        }
 
 
         public void Add(DLSaveFile m)
@@ -38,8 +110,12 @@ namespace DeadLine_Programm
 
         public void ViewToListBox(ListBox l)
         {
-            foreach (var v in listDL)
-                l.Items.Add(v);
+            int n = 0;
+            foreach (var el in listDL)
+            {
+                n++;
+                l.Items.Add(n + ") " + el);
+            }
         }
 
         public void LoadFromFile()
@@ -52,7 +128,7 @@ namespace DeadLine_Programm
         public void SaveToFile()
         {
             var mdJson = JsonConvert.SerializeObject(listDL);
-            MessageBox.Show(mdJson);
+           // MessageBox.Show(mdJson);
             using (StreamWriter sw = new StreamWriter("listDL.json"))
                 sw.WriteLine(mdJson);
         }
