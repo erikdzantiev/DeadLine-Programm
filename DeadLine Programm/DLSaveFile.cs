@@ -12,7 +12,7 @@ namespace DeadLine_Programm
     public class DLSaveFile
     {
         public DateTime Time { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; }   
 
         public DLSaveFile(DateTime time, string name)
         {

@@ -37,6 +37,7 @@ namespace DeadLine_Programm
             lst.Add(m);
             lst.SaveToFile();
             Close();
+
         }
     }
 }

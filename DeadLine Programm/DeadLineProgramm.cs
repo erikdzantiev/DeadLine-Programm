@@ -20,6 +20,7 @@ namespace DeadLine_Programm
         public FormDeadLines()
         {
             InitializeComponent();
+            Load += (sender, args) => StartTimer();
         }
 
         private void DeadLines_Load(object sender, EventArgs e)
@@ -69,6 +70,20 @@ namespace DeadLine_Programm
         {
             listBoxShowDeadline.Items.Clear();
             FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
+        }
+
+        private async void StartTimer()
+        {
+            int[] countTime = new int[4];
+            countTime = SearchTime();
+            TimeSpan ts = new TimeSpan(0, 1, 5);
+            while (ts > TimeSpan.Zero)
+            {
+                label1.Text = ts.ToString();
+                await Task.Delay(1000);
+                ts -= TimeSpan.FromSeconds(1);
+            }
+            Close();
         }
     }
 }
