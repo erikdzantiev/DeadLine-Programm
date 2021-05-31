@@ -20,7 +20,7 @@ namespace DeadLine_Programm
             int xDay = 700000;
             int xHours = 69930097;
             int xMinutes = 1195890788;
-            uint xSeconds = 3174253680;
+            int xSeconds = 217425368;
 
 
             using (StreamReader sr = new StreamReader("listDL.json"))
@@ -42,7 +42,7 @@ namespace DeadLine_Programm
                         xDay = minDay;
                         xHours = minHours;
                         xMinutes = minMinutes;
-                        xSeconds = Convert.ToUInt32(minSeconds);
+                        xSeconds = minSeconds;
                     }
                     if (minDay == xDay)
                     {
@@ -50,7 +50,7 @@ namespace DeadLine_Programm
                         {
                             xHours = minHours;
                             xMinutes = minMinutes;
-                            xSeconds = Convert.ToUInt32(minSeconds);
+                            xSeconds = minSeconds;
                         }
                     }
                     if (minDay == xDay)
@@ -60,7 +60,7 @@ namespace DeadLine_Programm
                             if (minMinutes < xMinutes)
                             {
                                 xMinutes = minMinutes;
-                                xSeconds = Convert.ToUInt32(minSeconds);
+                                xSeconds = minSeconds;
                             }
                         }
                     }
@@ -72,7 +72,7 @@ namespace DeadLine_Programm
                             {
                                 if (Convert.ToUInt32(minSeconds) < xSeconds)
                                 {
-                                    xSeconds = Convert.ToUInt32(minSeconds);
+                                    xSeconds = minSeconds;
                                 }
                             }
                         }
@@ -85,7 +85,7 @@ namespace DeadLine_Programm
             countTime[0] = xDay;
             countTime[1] = xHours;
             countTime[2] = xMinutes;
-            countTime[3] = Convert.ToInt32(xSeconds);
+            countTime[3] = xSeconds;
 
             return countTime;
         }

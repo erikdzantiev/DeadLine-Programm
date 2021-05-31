@@ -36,6 +36,7 @@ namespace DeadLine_Programm
             DLSaveFile m = new DLSaveFile(dt, textBoxNameDL.Text);
             lst.Add(m);
             lst.SaveToFile();
+            
             Close();
 
         }

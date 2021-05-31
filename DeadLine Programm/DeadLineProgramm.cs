@@ -20,7 +20,7 @@ namespace DeadLine_Programm
         public FormDeadLines()
         {
             InitializeComponent();
-            Load += (sender, args) => StartTimer();
+            //Load += (sender, args) => StartTimer();
         }
 
         private void DeadLines_Load(object sender, EventArgs e)
@@ -35,12 +35,6 @@ namespace DeadLine_Programm
             fam.ShowDialog();
         }
 
-        private void buttonCloseProgramm_Click(object sender, EventArgs e)
-        {
-
-
-           
-        }
 
         private void buttonDay_Click(object sender, EventArgs e)
         {
@@ -75,15 +69,24 @@ namespace DeadLine_Programm
         private async void StartTimer()
         {
             int[] countTime = new int[4];
-            countTime = SearchTime();
-            TimeSpan ts = new TimeSpan(0, 1, 5);
+            countTime = Сountdown.SearchTime();
+            TimeSpan ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
             while (ts > TimeSpan.Zero)
             {
-                label1.Text = ts.ToString();
+                labelTime.Text = ts.ToString();
                 await Task.Delay(1000);
                 ts -= TimeSpan.FromSeconds(1);
             }
-            Close();
+        }
+
+        private void buttonCountdown_Click(object sender, EventArgs e)
+        {
+            StartTimer();
+        }
+
+        private void listBoxShowDeadline_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
