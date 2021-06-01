@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 
 namespace DeadLine_Programm
 {
@@ -65,12 +66,13 @@ namespace DeadLine_Programm
             listBoxShowDeadline.Items.Clear();
             FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
         }
+        TimeSpan ts = new TimeSpan();
 
         private async void StartTimer()
         {
             int[] countTime = new int[4];
             countTime = Сountdown.SearchTime();
-            TimeSpan ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
+            ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
             while (ts > TimeSpan.Zero)
             {
                 labelTime.Text = ts.ToString();
@@ -79,8 +81,10 @@ namespace DeadLine_Programm
             }
         }
 
-        private void buttonCountdown_Click(object sender, EventArgs e)
+        private async void buttonCountdown_Click(object sender, EventArgs e)
         {
+            ts = new TimeSpan(0, 0, 0, 0);
+            await Task.Delay(1000, CancellationToken.None);
             StartTimer();
         }
 

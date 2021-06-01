@@ -40,12 +40,13 @@ namespace DeadLine_Programm
             this.label2 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonCountdown = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAddEvent
             // 
-            this.buttonAddEvent.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.buttonAddEvent.Location = new System.Drawing.Point(15, 90);
+            this.buttonAddEvent.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonAddEvent.Location = new System.Drawing.Point(17, 122);
             this.buttonAddEvent.Name = "buttonAddEvent";
             this.buttonAddEvent.Size = new System.Drawing.Size(172, 84);
             this.buttonAddEvent.TabIndex = 0;
@@ -106,10 +107,10 @@ namespace DeadLine_Programm
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 89);
+            this.label1.Size = new System.Drawing.Size(199, 77);
             this.label1.TabIndex = 10;
             this.label1.Text = "Чтобы добавить событие нажмите сюда:";
             // 
@@ -145,30 +146,40 @@ namespace DeadLine_Programm
             this.label2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(42, 313);
+            this.label2.Location = new System.Drawing.Point(26, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(314, 75);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Время до ближайшего Дедлайна:";
+            this.label2.Text = "До ближайшего Дедлайна осталось:";
             // 
             // labelTime
             // 
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(55, 413);
+            this.labelTime.Location = new System.Drawing.Point(39, 341);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(301, 67);
             this.labelTime.TabIndex = 14;
-            this.labelTime.Text = "0 0 0";
+            this.labelTime.Text = "0 : 0 : 0 : 0";
             // 
             // buttonCountdown
             // 
-            this.buttonCountdown.Location = new System.Drawing.Point(331, 216);
+            this.buttonCountdown.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonCountdown.Location = new System.Drawing.Point(250, 122);
             this.buttonCountdown.Name = "buttonCountdown";
-            this.buttonCountdown.Size = new System.Drawing.Size(122, 23);
+            this.buttonCountdown.Size = new System.Drawing.Size(172, 84);
             this.buttonCountdown.TabIndex = 15;
             this.buttonCountdown.Text = "обратный отсчет";
-            this.buttonCountdown.UseVisualStyleBackColor = true;
+            this.buttonCountdown.UseVisualStyleBackColor = false;
             this.buttonCountdown.Click += new System.EventHandler(this.buttonCountdown_Click);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(246, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 97);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Чтобы узнать, сколько времени осталось до ближайшего дедлайна, нажмите сюда:";
             // 
             // FormDeadLines
             // 
@@ -176,6 +187,7 @@ namespace DeadLine_Programm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1303, 668);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCountdown);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label2);
@@ -208,6 +220,7 @@ namespace DeadLine_Programm
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Button buttonCountdown;
         public System.Windows.Forms.ListBox listBoxShowDeadline;
+        private System.Windows.Forms.Label label3;
     }
 }
 
