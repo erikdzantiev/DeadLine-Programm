@@ -70,19 +70,18 @@ namespace DeadLine_Programm
             // listBoxShowDeadline
             // 
             this.listBoxShowDeadline.BackColor = System.Drawing.SystemColors.Info;
+            this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBoxShowDeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxShowDeadline.FormattingEnabled = true;
             this.listBoxShowDeadline.ItemHeight = 25;
             this.listBoxShowDeadline.Items.AddRange(new object[] {
             "Список дедлайнов"});
-            this.listBoxShowDeadline.Location = new System.Drawing.Point(782, 3);
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(786, 0);
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
-            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 654);
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 674);
             this.listBoxShowDeadline.TabIndex = 3;
-            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.listBoxShowDeadline.MeasureItem += listBoxShowDeadline_MeasureItem;
-            this.listBoxShowDeadline.DrawItem += lst_DrawItem;
             // 
             // buttonTomorrow
             // 
