@@ -56,7 +56,7 @@ namespace DeadLine_Programm
             // 
             // buttonDay
             // 
-            this.buttonDay.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonDay.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonDay.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDay.ForeColor = System.Drawing.SystemColors.WindowText;
             this.buttonDay.Location = new System.Drawing.Point(623, 141);
@@ -70,20 +70,23 @@ namespace DeadLine_Programm
             // listBoxShowDeadline
             // 
             this.listBoxShowDeadline.BackColor = System.Drawing.SystemColors.Info;
-            this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBoxShowDeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxShowDeadline.FormattingEnabled = true;
             this.listBoxShowDeadline.ItemHeight = 25;
-            this.listBoxShowDeadline.Location = new System.Drawing.Point(775, 0);
+            this.listBoxShowDeadline.Items.AddRange(new object[] {
+            "Список дедлайнов"});
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(782, 3);
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
-            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 671);
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 654);
             this.listBoxShowDeadline.TabIndex = 3;
-            this.listBoxShowDeadline.SelectedIndexChanged += new System.EventHandler(this.listBoxShowDeadline_SelectedIndexChanged);
+            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.listBoxShowDeadline.MeasureItem += listBoxShowDeadline_MeasureItem;
+            this.listBoxShowDeadline.DrawItem += lst_DrawItem;
             // 
             // buttonTomorrow
             // 
-            this.buttonTomorrow.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonTomorrow.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonTomorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTomorrow.Location = new System.Drawing.Point(623, 277);
             this.buttonTomorrow.Name = "buttonTomorrow";
@@ -95,7 +98,7 @@ namespace DeadLine_Programm
             // 
             // buttonWeek
             // 
-            this.buttonWeek.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonWeek.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonWeek.Location = new System.Drawing.Point(623, 413);
             this.buttonWeek.Name = "buttonWeek";
@@ -116,7 +119,7 @@ namespace DeadLine_Programm
             // 
             // buttonOtherTime
             // 
-            this.buttonOtherTime.BackColor = System.Drawing.Color.DarkOrange;
+            this.buttonOtherTime.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonOtherTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOtherTime.ForeColor = System.Drawing.Color.Black;
             this.buttonOtherTime.Location = new System.Drawing.Point(623, 541);
@@ -130,7 +133,7 @@ namespace DeadLine_Programm
             // button1
             // 
             this.button1.AllowDrop = true;
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(623, 3);
@@ -186,7 +189,7 @@ namespace DeadLine_Programm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1296, 671);
+            this.ClientSize = new System.Drawing.Size(1307, 674);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCountdown);
             this.Controls.Add(this.labelTime);

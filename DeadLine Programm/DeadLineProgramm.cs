@@ -88,9 +88,19 @@ namespace DeadLine_Programm
             StartTimer();
         }
 
-        private void listBoxShowDeadline_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxShowDeadline_MeasureItem(object sender, MeasureItemEventArgs e)
         {
+            e.ItemHeight = (int)e.Graphics.MeasureString(listBoxShowDeadline.Items[e.Index].ToString(), listBoxShowDeadline.Font, listBoxShowDeadline.Width).Height;
+        }
 
+        private void lst_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (listBoxShowDeadline.Items.Count > 0)
+            {
+                e.DrawBackground();
+                e.DrawFocusRectangle();
+                e.Graphics.DrawString(listBoxShowDeadline.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+            }
         }
     }
 }
