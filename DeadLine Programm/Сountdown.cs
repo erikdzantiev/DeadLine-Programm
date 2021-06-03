@@ -11,17 +11,17 @@ namespace DeadLine_Programm
 {
     public class Сountdown
     {
+       
         public DateTime Time { get; set; }
 
         public static int[] SearchTime()
         {
             List<Сountdown> listDL = new List<Сountdown>();
 
-            int xDay = 700000;
-            int xHours = 69930097;
-            int xMinutes = 1195890788;
-            int xSeconds = 217425368;
-
+            long xDay = 2913810;
+            long xHours = 69931446;
+            long xMinutes = 4195886816;
+            long xSeconds = 251753208960;
 
             using (StreamReader sr = new StreamReader("listDL.json"))
             {
@@ -33,10 +33,10 @@ namespace DeadLine_Programm
             {
                 try
                 {
-                    int minDay = (el.Time - DateTime.Today).Days;
-                    int minHours = (el.Time - DateTime.Today).Hours;
-                    int minMinutes = (el.Time - DateTime.Today).Minutes;
-                    int minSeconds = (el.Time - DateTime.Today).Seconds;
+                    long minDay = (el.Time - DateTime.Today).Days;
+                    long minHours = (el.Time - DateTime.Today).Hours;
+                    long minMinutes = (el.Time - DateTime.Today).Minutes;
+                    long minSeconds = (el.Time - DateTime.Now).Seconds;
                     if (minDay < xDay)
                     {
                         xDay = minDay;
@@ -82,12 +82,15 @@ namespace DeadLine_Programm
             }
 
             int[] countTime = new int[4];
-            countTime[0] = xDay;
-            countTime[1] = xHours;
-            countTime[2] = xMinutes;
-            countTime[3] = xSeconds;
+            countTime[0] = Convert.ToInt32(xDay);
+            countTime[1] = Convert.ToInt32(xHours);
+            countTime[2] = Convert.ToInt32(xMinutes);
+            countTime[3] = Convert.ToInt32(xSeconds);
+
+
 
             return countTime;
+
         }
 
     }

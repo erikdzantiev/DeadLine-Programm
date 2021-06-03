@@ -31,11 +31,11 @@ namespace DeadLine_Programm
         {
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxNameDL = new System.Windows.Forms.TextBox();
-            this.textBoxPurposeDL = new System.Windows.Forms.TextBox();
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxDescriptionDL = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -55,14 +55,6 @@ namespace DeadLine_Programm
             this.textBoxNameDL.Name = "textBoxNameDL";
             this.textBoxNameDL.Size = new System.Drawing.Size(274, 22);
             this.textBoxNameDL.TabIndex = 2;
-            // 
-            // textBoxPurposeDL
-            // 
-            this.textBoxPurposeDL.Location = new System.Drawing.Point(31, 107);
-            this.textBoxPurposeDL.Multiline = true;
-            this.textBoxPurposeDL.Name = "textBoxPurposeDL";
-            this.textBoxPurposeDL.Size = new System.Drawing.Size(274, 123);
-            this.textBoxPurposeDL.TabIndex = 3;
             // 
             // dateTimePickerDate
             // 
@@ -99,6 +91,14 @@ namespace DeadLine_Programm
             this.label2.TabIndex = 12;
             this.label2.Text = "Описание Дедлайна";
             // 
+            // textBoxDescriptionDL
+            // 
+            this.textBoxDescriptionDL.Location = new System.Drawing.Point(31, 107);
+            this.textBoxDescriptionDL.Multiline = true;
+            this.textBoxDescriptionDL.Name = "textBoxDescriptionDL";
+            this.textBoxDescriptionDL.Size = new System.Drawing.Size(274, 123);
+            this.textBoxDescriptionDL.TabIndex = 3;
+            // 
             // FormAddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +109,7 @@ namespace DeadLine_Programm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTime);
             this.Controls.Add(this.dateTimePickerDate);
-            this.Controls.Add(this.textBoxPurposeDL);
+            this.Controls.Add(this.textBoxDescriptionDL);
             this.Controls.Add(this.textBoxNameDL);
             this.Controls.Add(this.buttonAdd);
             this.Name = "FormAddEvent";
@@ -124,9 +124,9 @@ namespace DeadLine_Programm
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         public System.Windows.Forms.TextBox textBoxNameDL;
-        public System.Windows.Forms.TextBox textBoxPurposeDL;
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox textBoxDescriptionDL;
     }
 }

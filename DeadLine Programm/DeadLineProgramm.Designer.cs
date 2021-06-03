@@ -75,9 +75,9 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxShowDeadline.FormattingEnabled = true;
             this.listBoxShowDeadline.ItemHeight = 25;
-            this.listBoxShowDeadline.Location = new System.Drawing.Point(782, 0);
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(775, 0);
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
-            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 668);
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 671);
             this.listBoxShowDeadline.TabIndex = 3;
             this.listBoxShowDeadline.SelectedIndexChanged += new System.EventHandler(this.listBoxShowDeadline_SelectedIndexChanged);
             // 
@@ -186,7 +186,7 @@ namespace DeadLine_Programm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1303, 668);
+            this.ClientSize = new System.Drawing.Size(1296, 671);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCountdown);
             this.Controls.Add(this.labelTime);

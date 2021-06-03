@@ -12,17 +12,20 @@ namespace DeadLine_Programm
     public class DLSaveFile
     {
         public DateTime Time { get; set; }
-        public string Name { get; set; }   
+        public string Name { get; set; }  
+        
+        public string Description { get; set; }
 
-        public DLSaveFile(DateTime time, string name)
+        public DLSaveFile(DateTime time, string name, string description)
         {
             Time = time;
             Name = name;
+            Description = description;
         }
 
         public override string ToString()
         {
-            return Name + " " + Time;
+            return Name + " " + Time + " : " + Description;
         }
     }
 
@@ -110,6 +113,11 @@ namespace DeadLine_Programm
 
         public void ViewToListBox(ListBox l)
         {
+            using (StreamReader sr = new StreamReader("listDL.json"))
+            {
+                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+            }
+
             int n = 0;
             foreach (var el in listDL)
             {
