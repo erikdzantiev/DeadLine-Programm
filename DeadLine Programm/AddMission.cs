@@ -29,6 +29,7 @@ namespace DeadLine_Programm
              
         }
 
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             
@@ -39,7 +40,6 @@ namespace DeadLine_Programm
                 DLSaveFile m = new DLSaveFile(dt, textBoxNameDL.Text, textBoxDescriptionDL.Text);
                 lst.Add(m);
                 lst.SaveToFile();
-
                 Close();
             }
             else MessageBox.Show("Дата меньше текущей!");

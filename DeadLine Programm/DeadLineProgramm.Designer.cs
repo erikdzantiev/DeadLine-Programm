@@ -76,12 +76,15 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxShowDeadline.FormattingEnabled = true;
             this.listBoxShowDeadline.ItemHeight = 25;
-            this.listBoxShowDeadline.Items.AddRange(new object[] {
-            "Список дедлайнов"});
             this.listBoxShowDeadline.Location = new System.Drawing.Point(786, 0);
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
             this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 674);
             this.listBoxShowDeadline.TabIndex = 3;
+
+            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.listBoxShowDeadline.MeasureItem += listBoxShowDeadline_MeasureItem;
+            this.listBoxShowDeadline.DrawItem += listBoxShowDeadline_DrawItem;
+
             // 
             // buttonTomorrow
             // 

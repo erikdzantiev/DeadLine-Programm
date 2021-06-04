@@ -68,7 +68,7 @@ namespace DeadLine_Programm
         }
         TimeSpan ts = new TimeSpan();
 
-        private async void StartTimer()
+        public async void StartTimer()
         {
             int[] countTime = new int[4];
             countTime = Сountdown.SearchTime();
@@ -93,7 +93,7 @@ namespace DeadLine_Programm
             e.ItemHeight = (int)e.Graphics.MeasureString(listBoxShowDeadline.Items[e.Index].ToString(), listBoxShowDeadline.Font, listBoxShowDeadline.Width).Height;
         }
 
-        private void lst_DrawItem(object sender, DrawItemEventArgs e)
+        private void listBoxShowDeadline_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (listBoxShowDeadline.Items.Count > 0)
             {
@@ -102,5 +102,7 @@ namespace DeadLine_Programm
                 e.Graphics.DrawString(listBoxShowDeadline.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
             }
         }
+
+       
     }
 }
