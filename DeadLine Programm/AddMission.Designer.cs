@@ -62,7 +62,6 @@ namespace DeadLine_Programm
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerDate.TabIndex = 8;
-            this.dateTimePickerDate.ValueChanged += new System.EventHandler(this.dateTimePickerDate_ValueChanged);
             // 
             // dateTimePickerTime
             // 
@@ -104,7 +103,7 @@ namespace DeadLine_Programm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(335, 382);
+            this.ClientSize = new System.Drawing.Size(344, 400);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTime);
@@ -114,7 +113,6 @@ namespace DeadLine_Programm
             this.Controls.Add(this.buttonAdd);
             this.Name = "FormAddEvent";
             this.Text = "Добавьте мероприятие";
-            this.Load += new System.EventHandler(this.AddEvent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

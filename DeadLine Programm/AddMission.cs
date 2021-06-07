@@ -19,16 +19,6 @@ namespace DeadLine_Programm
             InitializeComponent();
         }
 
-        private void AddEvent_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dateTimePickerDate_ValueChanged(object sender, EventArgs e)
-        {
-             
-        }
-
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -37,8 +27,8 @@ namespace DeadLine_Programm
                     dateTimePickerTime.Value.TimeOfDay;
             if (dt > DateTime.Today)
             {
-                DLSaveFile m = new DLSaveFile(dt, textBoxNameDL.Text, textBoxDescriptionDL.Text);
-                lst.Add(m);
+                DLSaveFile savefile = new DLSaveFile(dt, textBoxNameDL.Text, textBoxDescriptionDL.Text);
+                lst.Add(savefile);
                 lst.SaveToFile();
                 Close();
             }

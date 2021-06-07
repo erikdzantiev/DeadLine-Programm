@@ -36,7 +36,7 @@ namespace DeadLine_Programm
             this.buttonWeek = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOtherTime = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAll = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonCountdown = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace DeadLine_Programm
             this.buttonDay.Name = "buttonDay";
             this.buttonDay.Size = new System.Drawing.Size(153, 111);
             this.buttonDay.TabIndex = 2;
-            this.buttonDay.Text = "Список дел на сегодняшний день";
+            this.buttonDay.Text = "Дела на сегоняшний день";
             this.buttonDay.UseVisualStyleBackColor = false;
             this.buttonDay.Click += new System.EventHandler(this.buttonDay_Click);
             // 
@@ -80,11 +80,9 @@ namespace DeadLine_Programm
             this.listBoxShowDeadline.Name = "listBoxShowDeadline";
             this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 674);
             this.listBoxShowDeadline.TabIndex = 3;
-
             this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBoxShowDeadline.MeasureItem += listBoxShowDeadline_MeasureItem;
             this.listBoxShowDeadline.DrawItem += listBoxShowDeadline_DrawItem;
-
             // 
             // buttonTomorrow
             // 
@@ -94,7 +92,7 @@ namespace DeadLine_Programm
             this.buttonTomorrow.Name = "buttonTomorrow";
             this.buttonTomorrow.Size = new System.Drawing.Size(153, 111);
             this.buttonTomorrow.TabIndex = 4;
-            this.buttonTomorrow.Text = "Список дел на завтрашний день";
+            this.buttonTomorrow.Text = "Дела на завтрашний день";
             this.buttonTomorrow.UseVisualStyleBackColor = false;
             this.buttonTomorrow.Click += new System.EventHandler(this.buttonTomorrow_Click);
             // 
@@ -106,7 +104,7 @@ namespace DeadLine_Programm
             this.buttonWeek.Name = "buttonWeek";
             this.buttonWeek.Size = new System.Drawing.Size(153, 111);
             this.buttonWeek.TabIndex = 5;
-            this.buttonWeek.Text = "Список дел в течении следующей недели";
+            this.buttonWeek.Text = "Дела на неделю";
             this.buttonWeek.UseVisualStyleBackColor = false;
             this.buttonWeek.Click += new System.EventHandler(this.buttonWeek_Click);
             // 
@@ -128,23 +126,23 @@ namespace DeadLine_Programm
             this.buttonOtherTime.Name = "buttonOtherTime";
             this.buttonOtherTime.Size = new System.Drawing.Size(153, 127);
             this.buttonOtherTime.TabIndex = 11;
-            this.buttonOtherTime.Text = "Список дел на продолжительный промежуток времени";
+            this.buttonOtherTime.Text = "Дела на более продолжительный промежуток времени";
             this.buttonOtherTime.UseVisualStyleBackColor = false;
             this.buttonOtherTime.Click += new System.EventHandler(this.buttonOtherTime_Click);
             // 
-            // button1
+            // buttonAll
             // 
-            this.button1.AllowDrop = true;
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(623, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 111);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "показать все дела";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAll.AllowDrop = true;
+            this.buttonAll.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAll.ForeColor = System.Drawing.Color.Black;
+            this.buttonAll.Location = new System.Drawing.Point(623, 3);
+            this.buttonAll.Name = "buttonAll";
+            this.buttonAll.Size = new System.Drawing.Size(153, 111);
+            this.buttonAll.TabIndex = 12;
+            this.buttonAll.Text = "Показать все дела";
+            this.buttonAll.UseVisualStyleBackColor = false;
+            this.buttonAll.Click += new System.EventHandler(this.buttonAll_Click);
             // 
             // label2
             // 
@@ -196,7 +194,7 @@ namespace DeadLine_Programm
             this.Controls.Add(this.buttonCountdown);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAll);
             this.Controls.Add(this.buttonOtherTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonWeek);
@@ -220,7 +218,7 @@ namespace DeadLine_Programm
         private System.Windows.Forms.Button buttonWeek;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOtherTime;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAll;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Button buttonCountdown;

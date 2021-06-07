@@ -37,46 +37,46 @@ namespace DeadLine_Programm
                     long minHours = (el.Time - DateTime.Today).Hours;
                     long minMinutes = (el.Time - DateTime.Today).Minutes;
                     long minSeconds = (el.Time - DateTime.Now).Seconds;
-                    if (minDay < xDay)
-                    {
-                        xDay = minDay;
-                        xHours = minHours;
-                        xMinutes = minMinutes;
-                        xSeconds = minSeconds;
-                    }
-                    if (minDay == xDay)
-                    {
-                        if (minHours < xHours)
+                        if (minDay < xDay)
                         {
+                            xDay = minDay;
                             xHours = minHours;
                             xMinutes = minMinutes;
                             xSeconds = minSeconds;
                         }
-                    }
-                    if (minDay == xDay)
-                    {
-                        if (minHours == xHours)
+                        if (minDay == xDay)
                         {
-                            if (minMinutes < xMinutes)
+                            if (minHours < xHours)
                             {
+                                xHours = minHours;
                                 xMinutes = minMinutes;
                                 xSeconds = minSeconds;
                             }
                         }
-                    }
-                    if (minDay == xDay)
-                    {
-                        if (minHours == xHours)
+                        if (minDay == xDay)
                         {
-                            if (minMinutes == xMinutes)
+                            if (minHours == xHours)
                             {
-                                if (Convert.ToUInt32(minSeconds) < xSeconds)
+                                if (minMinutes < xMinutes)
                                 {
+                                    xMinutes = minMinutes;
                                     xSeconds = minSeconds;
                                 }
                             }
                         }
-                    }
+                        if (minDay == xDay)
+                        {
+                            if (minHours == xHours)
+                            {
+                                if (minMinutes == xMinutes)
+                                {
+                                    if (Convert.ToUInt32(minSeconds) < xSeconds)
+                                    {
+                                        xSeconds = minSeconds;
+                                    }
+                                }
+                            }
+                        }
                 }
                 catch { }
             }

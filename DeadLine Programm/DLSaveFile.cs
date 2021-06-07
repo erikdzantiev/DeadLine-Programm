@@ -126,13 +126,7 @@ namespace DeadLine_Programm
             }
         }
 
-        public void LoadFromFile()
-        {
-            using (StreamReader sr = new StreamReader("listDL.json"))
-            {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
-        }
+     
         public void SaveToFile()
         {
             var mdJson = JsonConvert.SerializeObject(listDL);

@@ -61,11 +61,12 @@ namespace DeadLine_Programm
             FormAddEvent.lst.OtherTime(listBoxShowDeadline);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAll_Click(object sender, EventArgs e)
         {
             listBoxShowDeadline.Items.Clear();
             FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
         }
+        
         TimeSpan ts = new TimeSpan();
 
         public async void StartTimer()
@@ -103,6 +104,6 @@ namespace DeadLine_Programm
             }
         }
 
-       
+
     }
 }
