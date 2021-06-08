@@ -40,15 +40,17 @@ namespace DeadLine_Programm
                 listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
             }
 
-            int n = 0;
-            foreach (var el in listDL)
+            if (listDL.Count > 0)
             {
-                if ((el.Time - DateTime.Today).Days == 1)
+                int n = 0;
+                foreach (var el in listDL)
                 {
                     n++;
                     l.Items.Add(n + ") " + el);
                 }
             }
+            else MessageBox.Show("сначала добавьте дату!");
+
         }
 
         public void Today(ListBox l)
@@ -57,15 +59,18 @@ namespace DeadLine_Programm
             {
                 listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
             }
-            int n = 0;
-            foreach (var el in listDL)
+
+            if (listDL.Count > 0)
             {
-                if ((el.Time - DateTime.Today).Days < 1)
+                int n = 0;
+                foreach (var el in listDL)
                 {
                     n++;
                     l.Items.Add(n + ") " + el);
                 }
             }
+            else MessageBox.Show("сначала добавьте дату!");
+
         }
 
         public void Week(ListBox l)
@@ -75,15 +80,17 @@ namespace DeadLine_Programm
                 listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
             }
 
-            int n = 0;
-            foreach (var el in listDL)
+            if (listDL.Count > 0)
             {
-                if ((el.Time - DateTime.Today).Days <= 7 && (el.Time - DateTime.Today).Days > 1)
+                int n = 0;
+                foreach (var el in listDL)
                 {
                     n++;
                     l.Items.Add(n + ") " + el);
                 }
             }
+            else MessageBox.Show("сначала добавьте дату!");
+
         }
 
 
@@ -94,15 +101,17 @@ namespace DeadLine_Programm
                 listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
             }
 
-            int n = 0;
-            foreach (var el in listDL)
+            if (listDL.Count > 0)
             {
-                if ((el.Time - DateTime.Today).Days > 7)
+                int n = 0;
+                foreach (var el in listDL)
                 {
                     n++;
                     l.Items.Add(n + ") " + el);
                 }
             }
+            else MessageBox.Show("сначала добавьте дату!");
+
         }
 
 
@@ -115,15 +124,20 @@ namespace DeadLine_Programm
         {
             using (StreamReader sr = new StreamReader("listDL.json"))
             {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
             }
 
-            int n = 0;
-            foreach (var el in listDL)
+            if (listDL.Count > 0)
             {
-                n++;
-                l.Items.Add(n + ") " + el);
+                int n = 0;
+                foreach (var el in listDL)
+                {
+                    n++;
+                    l.Items.Add(n + ") " + el);
+                }
             }
+            else MessageBox.Show("сначала добавьте дату!");
+            
         }
 
      

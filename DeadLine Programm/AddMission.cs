@@ -20,9 +20,9 @@ namespace DeadLine_Programm
         }
 
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        public void buttonAdd_Click(object sender, EventArgs e)
         {
-            
+
             DateTime dt = dateTimePickerDate.Value.Date +
                     dateTimePickerTime.Value.TimeOfDay;
             if (dt > DateTime.Today)
@@ -33,6 +33,8 @@ namespace DeadLine_Programm
                 Close();
             }
             else MessageBox.Show("Дата меньше текущей!");
+
+
         }
     }
 }

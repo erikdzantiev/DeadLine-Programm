@@ -21,7 +21,7 @@ namespace DeadLine_Programm
         public FormDeadLines()
         {
             InitializeComponent();
-            //Load += (sender, args) => StartTimer();
+            
         }
 
         private void DeadLines_Load(object sender, EventArgs e)
@@ -63,47 +63,22 @@ namespace DeadLine_Programm
 
         private void buttonAll_Click(object sender, EventArgs e)
         {
-            listBoxShowDeadline.Items.Clear();
-            FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
+            
+                listBoxShowDeadline.Items.Clear();
+                FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
+           
         }
         
         TimeSpan ts = new TimeSpan();
 
-        public async void StartTimer()
+
+        private void buttonCountdown_Click(object sender, EventArgs e)
         {
             int[] countTime = new int[4];
             countTime = Сountdown.SearchTime();
+            string nameMin = Сountdown.SearchName();
             ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
-            while (ts > TimeSpan.Zero)
-            {
-                labelTime.Text = ts.ToString();
-                await Task.Delay(1000);
-                ts -= TimeSpan.FromSeconds(1);
-            }
+            labelTime.Text = nameMin + ": " + ts.ToString();
         }
-
-        private async void buttonCountdown_Click(object sender, EventArgs e)
-        {
-            ts = new TimeSpan(0, 0, 0, 0);
-            await Task.Delay(1000, CancellationToken.None);
-            StartTimer();
-        }
-
-        private void listBoxShowDeadline_MeasureItem(object sender, MeasureItemEventArgs e)
-        {
-            e.ItemHeight = (int)e.Graphics.MeasureString(listBoxShowDeadline.Items[e.Index].ToString(), listBoxShowDeadline.Font, listBoxShowDeadline.Width).Height;
-        }
-
-        private void listBoxShowDeadline_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (listBoxShowDeadline.Items.Count > 0)
-            {
-                e.DrawBackground();
-                e.DrawFocusRectangle();
-                e.Graphics.DrawString(listBoxShowDeadline.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
-            }
-        }
-
-
     }
 }

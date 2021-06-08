@@ -31,7 +31,6 @@ namespace DeadLine_Programm
         {
             this.buttonAddEvent = new System.Windows.Forms.Button();
             this.buttonDay = new System.Windows.Forms.Button();
-            this.listBoxShowDeadline = new System.Windows.Forms.ListBox();
             this.buttonTomorrow = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@ namespace DeadLine_Programm
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonCountdown = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.listBoxShowDeadline = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonAddEvent
@@ -66,23 +66,6 @@ namespace DeadLine_Programm
             this.buttonDay.Text = "Дела на сегоняшний день";
             this.buttonDay.UseVisualStyleBackColor = false;
             this.buttonDay.Click += new System.EventHandler(this.buttonDay_Click);
-            // 
-            // listBoxShowDeadline
-            // 
-            this.listBoxShowDeadline.BackColor = System.Drawing.SystemColors.Info;
-            this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.listBoxShowDeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBoxShowDeadline.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listBoxShowDeadline.FormattingEnabled = true;
-            this.listBoxShowDeadline.ItemHeight = 25;
-            this.listBoxShowDeadline.Location = new System.Drawing.Point(786, 0);
-            this.listBoxShowDeadline.Name = "listBoxShowDeadline";
-            this.listBoxShowDeadline.Size = new System.Drawing.Size(521, 674);
-            this.listBoxShowDeadline.TabIndex = 3;
-            this.listBoxShowDeadline.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.listBoxShowDeadline.MeasureItem += listBoxShowDeadline_MeasureItem;
-            this.listBoxShowDeadline.DrawItem += listBoxShowDeadline_DrawItem;
             // 
             // buttonTomorrow
             // 
@@ -160,9 +143,9 @@ namespace DeadLine_Programm
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTime.Location = new System.Drawing.Point(39, 341);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(301, 67);
+            this.labelTime.Size = new System.Drawing.Size(349, 309);
             this.labelTime.TabIndex = 14;
-            this.labelTime.Text = "0 : 0 : 0 : 0";
+            this.labelTime.Text = "00:00:00";
             // 
             // buttonCountdown
             // 
@@ -184,12 +167,24 @@ namespace DeadLine_Programm
             this.label3.TabIndex = 16;
             this.label3.Text = "Чтобы узнать, сколько времени осталось до ближайшего дедлайна, нажмите сюда:";
             // 
+            // listBoxShowDeadline
+            // 
+            this.listBoxShowDeadline.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBoxShowDeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxShowDeadline.FormattingEnabled = true;
+            this.listBoxShowDeadline.ItemHeight = 24;
+            this.listBoxShowDeadline.Location = new System.Drawing.Point(782, 0);
+            this.listBoxShowDeadline.Name = "listBoxShowDeadline";
+            this.listBoxShowDeadline.Size = new System.Drawing.Size(525, 674);
+            this.listBoxShowDeadline.TabIndex = 17;
+            // 
             // FormDeadLines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1307, 674);
+            this.Controls.Add(this.listBoxShowDeadline);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCountdown);
             this.Controls.Add(this.labelTime);
@@ -199,7 +194,6 @@ namespace DeadLine_Programm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonWeek);
             this.Controls.Add(this.buttonTomorrow);
-            this.Controls.Add(this.listBoxShowDeadline);
             this.Controls.Add(this.buttonDay);
             this.Controls.Add(this.buttonAddEvent);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -220,10 +214,10 @@ namespace DeadLine_Programm
         private System.Windows.Forms.Button buttonOtherTime;
         private System.Windows.Forms.Button buttonAll;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Button buttonCountdown;
-        public System.Windows.Forms.ListBox listBoxShowDeadline;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBoxShowDeadline;
+        public System.Windows.Forms.Label labelTime;
     }
 }
 

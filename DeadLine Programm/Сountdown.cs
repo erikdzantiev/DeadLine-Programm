@@ -14,84 +14,84 @@ namespace DeadLine_Programm
        
         public DateTime Time { get; set; }
 
+        public string Name { get; set; }
+
         public static int[] SearchTime()
         {
             List<Сountdown> listDL = new List<Сountdown>();
 
-            long xDay = 2913810;
-            long xHours = 69931446;
-            long xMinutes = 4195886816;
-            long xSeconds = 251753208960;
+            int[] countTime = new int[4];
+            countTime[0] = 0;
+            countTime[1] = 0;
+            countTime[2] = 0;
+            countTime[3] = 0;
 
             using (StreamReader sr = new StreamReader("listDL.json"))
             {
                 listDL = JsonConvert.DeserializeObject<List<Сountdown>>(sr.ReadToEnd());
             }
-
-
-            foreach (var el in listDL)
+            if (listDL.Count > 0)
             {
-                try
+                TimeSpan minDiff = TimeSpan.MaxValue;
+
+
+                foreach (var el in listDL)
                 {
-                    long minDay = (el.Time - DateTime.Today).Days;
-                    long minHours = (el.Time - DateTime.Today).Hours;
-                    long minMinutes = (el.Time - DateTime.Today).Minutes;
-                    long minSeconds = (el.Time - DateTime.Now).Seconds;
-                        if (minDay < xDay)
+                    if (el.Time > DateTime.Today)
+                        if (el.Time - DateTime.Today < minDiff)
                         {
-                            xDay = minDay;
-                            xHours = minHours;
-                            xMinutes = minMinutes;
-                            xSeconds = minSeconds;
+                            minDiff = el.Time - DateTime.Today;
                         }
-                        if (minDay == xDay)
-                        {
-                            if (minHours < xHours)
-                            {
-                                xHours = minHours;
-                                xMinutes = minMinutes;
-                                xSeconds = minSeconds;
-                            }
-                        }
-                        if (minDay == xDay)
-                        {
-                            if (minHours == xHours)
-                            {
-                                if (minMinutes < xMinutes)
-                                {
-                                    xMinutes = minMinutes;
-                                    xSeconds = minSeconds;
-                                }
-                            }
-                        }
-                        if (minDay == xDay)
-                        {
-                            if (minHours == xHours)
-                            {
-                                if (minMinutes == xMinutes)
-                                {
-                                    if (Convert.ToUInt32(minSeconds) < xSeconds)
-                                    {
-                                        xSeconds = minSeconds;
-                                    }
-                                }
-                            }
-                        }
+
                 }
-                catch { }
+                countTime[0] = Convert.ToInt32(minDiff.Days);
+                countTime[1] = Convert.ToInt32(minDiff.Hours);
+                countTime[2] = Convert.ToInt32(minDiff.Minutes);
+                countTime[3] = Convert.ToInt32(minDiff.Seconds);
+                return countTime;
             }
-
-            int[] countTime = new int[4];
-            countTime[0] = Convert.ToInt32(xDay);
-            countTime[1] = Convert.ToInt32(xHours);
-            countTime[2] = Convert.ToInt32(xMinutes);
-            countTime[3] = Convert.ToInt32(xSeconds);
-
-
-
-            return countTime;
-
+            else
+            {
+                MessageBox.Show("Сначала добавьте дедлайн!");
+                return countTime;
+            }
         }
+
+
+            public static string SearchName()
+            {
+                List<Сountdown> listD = new List<Сountdown>();
+                string nameMinDL = "";
+
+
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listD = JsonConvert.DeserializeObject<List<Сountdown>>(sr.ReadToEnd());
+                }
+                if (listD.Count > 0)
+                {
+                    TimeSpan minDiff = TimeSpan.MaxValue;
+
+                    foreach (var el in listD)
+                    {
+                        if (el.Time > DateTime.Today)
+                            if (el.Time - DateTime.Today < minDiff)
+                            {
+                                minDiff = el.Time - DateTime.Today;
+                                nameMinDL = el.Name;
+                            }
+
+                    }
+                    return nameMinDL;
+                }
+                else
+                {
+                    MessageBox.Show("Сначала добавьте дедлайн!");
+                    return nameMinDL;
+                }
+
+            }
+        
 
     }
 }
