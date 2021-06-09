@@ -70,7 +70,15 @@ namespace DeadLine_Programm
         }
         
         TimeSpan ts = new TimeSpan();
-
+        
+        public void Coutndown()
+        {
+            int[] countTime = new int[4];
+            countTime = Сountdown.SearchTime();
+            string nameMin = Сountdown.SearchName();
+            ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
+            labelTime.Text = nameMin + ": " + ts.ToString();
+        }
 
         private void buttonCountdown_Click(object sender, EventArgs e)
         {
