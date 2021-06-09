@@ -35,116 +35,141 @@ namespace DeadLine_Programm
 
         public void Tomorrow(ListBox l)
         {
-            using (StreamReader sr = new StreamReader("listDL.json"))
+            try
             {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
-
-            if (listDL.Count > 0)
-            {
-                int n = 0;
-                foreach (var el in listDL)
+                using (StreamReader sr = new StreamReader("listDL.json"))
                 {
-                    n++;
-                    l.Items.Add(n + ") " + el);
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                }
+
+
+                if (listDL.Count == 0) MessageBox.Show("Сначала добавьте дату");
+                else
+                {
+                    int n = 0;
+                    foreach (var el in listDL)
+                    {
+                        if ((el.Time - DateTime.Today).Days > 0 && (el.Time - DateTime.Today).Days <2)
+                        { 
+                            n++;
+                            l.Items.Add(n + ") " + el);
+                        }
+                    }
                 }
             }
-            else MessageBox.Show("сначала добавьте дату!");
+            catch { MessageBox.Show("сначала добавьте дату!"); }
 
         }
 
         public void Today(ListBox l)
         {
-            using (StreamReader sr = new StreamReader("listDL.json"))
+            try
             {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                }
 
-            if (listDL.Count > 0)
-            {
+
+                if (listDL.Count == 0) MessageBox.Show("Сначала добавьте дату");
                 int n = 0;
                 foreach (var el in listDL)
                 {
-                    n++;
-                    l.Items.Add(n + ") " + el);
+                    if ((el.Time - DateTime.Today).Days == 0)
+                    {
+                        n++;
+                        l.Items.Add(n + ") " + el);
+                    }
                 }
             }
-            else MessageBox.Show("сначала добавьте дату!");
+            catch { MessageBox.Show("сначала добавьте дату!"); }
 
         }
 
         public void Week(ListBox l)
         {
-            using (StreamReader sr = new StreamReader("listDL.json"))
+            try
             {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                }
 
-            if (listDL.Count > 0)
-            {
+
+                if (listDL.Count == 0) MessageBox.Show("Сначала добавьте дату");
                 int n = 0;
                 foreach (var el in listDL)
                 {
-                    n++;
-                    l.Items.Add(n + ") " + el);
+                    if ((el.Time - DateTime.Today).Days <= 7)
+                    {
+                        n++;
+                        l.Items.Add(n + ") " + el);
+                    }
                 }
             }
-            else MessageBox.Show("сначала добавьте дату!");
+            catch { MessageBox.Show("сначала добавьте дату!"); }
+
 
         }
 
 
         public void OtherTime(ListBox l)
         {
-            using (StreamReader sr = new StreamReader("listDL.json"))
+            try
             {
-                listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                }
 
-            if (listDL.Count > 0)
-            {
+
+                if (listDL.Count == 0) MessageBox.Show("Сначала добавьте дату");
                 int n = 0;
                 foreach (var el in listDL)
                 {
-                    n++;
-                    l.Items.Add(n + ") " + el);
+                    if ((el.Time - DateTime.Today).Days > 7)
+                    {
+                        n++;
+                        l.Items.Add(n + ") " + el);
+                    }
                 }
             }
-            else MessageBox.Show("сначала добавьте дату!");
+            catch { MessageBox.Show("сначала добавьте дату!"); }
 
         }
+    
 
+        public void AllTime(ListBox l)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
+                }
+
+
+                if (listDL.Count == 0) MessageBox.Show("Сначала добавьте дату");
+                int n = 0;
+                foreach (var el in listDL)
+                {
+                        n++;
+                        l.Items.Add(n + ") " + el);
+                }
+            
+            }
+            catch { MessageBox.Show("Сначала добавьте дату"); }
+
+        }
 
         public void Add(DLSaveFile m)
         {
             listDL.Add(m);
         }
 
-        public void ViewToListBox(ListBox l)
-        {
-            using (StreamReader sr = new StreamReader("listDL.json"))
-            {
-                    listDL = JsonConvert.DeserializeObject<List<DLSaveFile>>(sr.ReadToEnd());
-            }
-
-            if (listDL.Count > 0)
-            {
-                int n = 0;
-                foreach (var el in listDL)
-                {
-                    n++;
-                    l.Items.Add(n + ") " + el);
-                }
-            }
-            else MessageBox.Show("сначала добавьте дату!");
-            
-        }
-
-     
         public void SaveToFile()
         {
             var mdJson = JsonConvert.SerializeObject(listDL);
-           // MessageBox.Show(mdJson);
             using (StreamWriter sw = new StreamWriter("listDL.json"))
                 sw.WriteLine(mdJson);
         }

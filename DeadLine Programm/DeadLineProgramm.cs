@@ -65,7 +65,7 @@ namespace DeadLine_Programm
         {
             
                 listBoxShowDeadline.Items.Clear();
-                FormAddEvent.lst.ViewToListBox(listBoxShowDeadline);
+                FormAddEvent.lst.AllTime(listBoxShowDeadline);
            
         }
         
@@ -78,7 +78,7 @@ namespace DeadLine_Programm
             countTime = Сountdown.SearchTime();
             string nameMin = Сountdown.SearchName();
             ts = new TimeSpan(countTime[0], countTime[1], countTime[2], countTime[3]);
-            labelTime.Text = nameMin + ": " + ts.ToString();
+            labelTime.Text = nameMin + " " + ts.ToString();
         }
     }
 }

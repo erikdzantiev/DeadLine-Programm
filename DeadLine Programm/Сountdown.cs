@@ -26,10 +26,15 @@ namespace DeadLine_Programm
             countTime[2] = 0;
             countTime[3] = 0;
 
-            using (StreamReader sr = new StreamReader("listDL.json"))
+            try
             {
-                listDL = JsonConvert.DeserializeObject<List<Сountdown>>(sr.ReadToEnd());
+                using (StreamReader sr = new StreamReader("listDL.json"))
+                {
+                    listDL = JsonConvert.DeserializeObject<List<Сountdown>>(sr.ReadToEnd());
+                }
             }
+            catch { MessageBox.Show("Сначала добавьте Дедлайн!"); }
+
             if (listDL.Count > 0)
             {
                 TimeSpan minDiff = TimeSpan.MaxValue;
@@ -52,7 +57,6 @@ namespace DeadLine_Programm
             }
             else
             {
-                MessageBox.Show("Сначала добавьте дедлайн!");
                 return countTime;
             }
         }
@@ -63,11 +67,15 @@ namespace DeadLine_Programm
                 List<Сountdown> listD = new List<Сountdown>();
                 string nameMinDL = "";
 
-
+            try
+            {
                 using (StreamReader sr = new StreamReader("listDL.json"))
                 {
                     listD = JsonConvert.DeserializeObject<List<Сountdown>>(sr.ReadToEnd());
                 }
+            }
+            catch { }
+
                 if (listD.Count > 0)
                 {
                     TimeSpan minDiff = TimeSpan.MaxValue;
@@ -86,7 +94,6 @@ namespace DeadLine_Programm
                 }
                 else
                 {
-                    MessageBox.Show("Сначала добавьте дедлайн!");
                     return nameMinDL;
                 }
 
