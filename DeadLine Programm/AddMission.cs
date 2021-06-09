@@ -13,6 +13,7 @@ namespace DeadLine_Programm
     public partial class FormAddEvent : Form
     { 
         public static ListDL lst = new ListDL();
+        
 
         public FormAddEvent()
         {
@@ -27,6 +28,7 @@ namespace DeadLine_Programm
                     dateTimePickerTime.Value.TimeOfDay;
             if (dt > DateTime.Today)
             {
+                
                 DLSaveFile savefile = new DLSaveFile(dt, textBoxNameDL.Text, textBoxDescriptionDL.Text);
                 lst.Add(savefile);
                 lst.SaveToFile();

@@ -70,7 +70,8 @@ namespace DeadLine_Programm
         }
         
         TimeSpan ts = new TimeSpan();
-
+        
+      
 
         private void buttonCountdown_Click(object sender, EventArgs e)
         {
